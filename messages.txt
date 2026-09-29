@@ -1,0 +1,41 @@
+# Twitch Multi Chat prepared messages
+#
+# [name]                 Unique preset name.
+# text=                  Message to send.
+# cooldown=              Delay after sending this message.
+# accounts=              * for all accounts, or comma-separated usernames.
+# repeat_after=          Minimum time before this exact message can be used again.
+# enabled=               true/false.
+#
+# Flood mode randomly chooses from all enabled messages allowed for the
+# selected account. It never repeats a message until repeat_after expires.
+# 3h means three hours. You can also use 30m, 45s, 1d, or plain seconds.
+
+[greeting]
+text=Hello chat!
+cooldown=15
+accounts=*
+repeat_after=3h
+enabled=true
+
+[hello]
+text=Hello everyone!
+cooldown=20
+accounts=*
+repeat_after=3h
+enabled=true
+
+[thanks]
+text=Thanks for watching!
+cooldown=25
+accounts=*
+repeat_after=3h
+enabled=true
+
+# Example account-specific preset:
+# [bot1_special]
+# text=Hello from bot1!
+# cooldown=20
+# accounts=bot1
+# repeat_after=3h
+# enabled=true

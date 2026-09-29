@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+/data/accounts.json
+/data/account_settings.json
+/data/flood_history.json
