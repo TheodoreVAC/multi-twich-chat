@@ -13,10 +13,8 @@
 
 </div>
 
----
-
 ## 🍃 About
-
+| | |
 |:--|:--|
 | **Platforms** | Windows · macOS · Linux |
 | **Interface** | Python + PySide6 |
