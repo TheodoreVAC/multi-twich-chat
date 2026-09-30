@@ -26,10 +26,8 @@
 
 ## 🖼️ Gallery
 
-<div align="center">
   <img src="screenshots/2026-09-30_13-32-21.png" width="49%" alt="Twitch Multi Chat application window">
   <img src="screenshots/vsc.png" width="49%" alt="Twitch Multi Chat source code in Visual Studio Code">
-</div>
 
 ## 🌱 Features
 
