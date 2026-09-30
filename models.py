@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from config import DEFAULT_REPEAT_AFTER
+from config import DEFAULT_CONNECT_DELAY, DEFAULT_REPEAT_AFTER
 
 
 @dataclass
@@ -27,5 +27,6 @@ class PreparedMessage:
 
 @dataclass
 class AccountSettings:
-    mode: str = "message"
+    mode: str = "message"  # message | flood
     flood_running: bool = False
+    connect_delay: float = DEFAULT_CONNECT_DELAY

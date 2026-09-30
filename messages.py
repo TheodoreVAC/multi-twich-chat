@@ -29,25 +29,25 @@ class PreparedMessageStore:
 # The send history is stored in data/flood_history.json so restarting the app
 # does not reset the repeat protection.
 
-[greeting]
-text=Hello chat!
-cooldown=15
+[nice_stream]
+text=приятный стрим сегодня
+cooldown=240
 accounts=*
-repeat_after=3h
+repeat_after=5h
 enabled=true
 
-[hello]
-text=Hello everyone!
-cooldown=20
+[good_vibes]
+text=тут сегодня хорошая атмосфера
+cooldown=270
 accounts=*
-repeat_after=3h
+repeat_after=5h
 enabled=true
 
-[thanks]
-text=Thanks for watching!
-cooldown=25
+[watching_along]
+text=смотрю, очень уютно идет
+cooldown=300
 accounts=*
-repeat_after=3h
+repeat_after=5h
 enabled=true
 """
         self.path.write_text(example, encoding="utf-8")

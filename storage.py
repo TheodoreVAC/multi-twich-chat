@@ -5,6 +5,7 @@ import threading
 from dataclasses import asdict
 from pathlib import Path
 
+from config import DEFAULT_CONNECT_DELAY
 from models import Account, AccountSettings
 
 
@@ -61,10 +62,22 @@ class AccountSettingsStore:
         for username, raw in data.items():
             if not isinstance(raw, dict):
                 continue
+
             mode = str(raw.get("mode", "message")).strip().lower()
             if mode not in {"message", "flood"}:
                 mode = "message"
-            result[username.lower()] = AccountSettings(mode=mode, flood_running=False)
+
+            try:
+                connect_delay = float(raw.get("connect_delay", DEFAULT_CONNECT_DELAY))
+            except (TypeError, ValueError):
+                connect_delay = DEFAULT_CONNECT_DELAY
+            connect_delay = max(0.0, min(3600.0, connect_delay))
+
+            result[username.lower()] = AccountSettings(
+                mode=mode,
+                flood_running=False,
+                connect_delay=connect_delay,
+            )
         return result
 
     def save(self, settings: dict[str, AccountSettings]) -> None:
@@ -72,6 +85,7 @@ class AccountSettingsStore:
             username: {
                 "mode": value.mode,
                 "flood_running": False,
+                "connect_delay": max(0.0, min(3600.0, float(value.connect_delay))),
             }
             for username, value in settings.items()
         }
@@ -114,6 +128,7 @@ class FloodHistoryStore:
 
     def mark_sent(self, username: str, preset_name: str, timestamp: float) -> None:
         with self._lock:
+            history = self.load()
             username = username.lower()
             bucket = history.setdefault(username, {})
             bucket[preset_name] = timestamp
@@ -121,5 +136,6 @@ class FloodHistoryStore:
 
     def remove_account(self, username: str) -> None:
         with self._lock:
+            history = self.load()
             history.pop(username.lower(), None)
             self.path.write_text(json.dumps(history, ensure_ascii=False, indent=2), encoding="utf-8")

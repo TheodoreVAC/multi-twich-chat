@@ -1,41 +1,284 @@
-# Twitch Multi Chat prepared messages
-#
-# [name]                 Unique preset name.
-# text=                  Message to send.
-# cooldown=              Delay after sending this message.
-# accounts=              * for all accounts, or comma-separated usernames.
-# repeat_after=          Minimum time before this exact message can be used again.
-# enabled=               true/false.
-#
-# Flood mode randomly chooses from all enabled messages allowed for the
-# selected account. It never repeats a message until repeat_after expires.
-# 3h means three hours. You can also use 30m, 45s, 1d, or plain seconds.
+# Нейтральные короткие сообщения для разных стримов.
+# Каждый аккаунт отправляет не чаще чем раз в 4–5 минут.
+# Текст каждого пресета общий для всех аккаунтов и доступен снова через 5 часов
+# после успешной отправки любым аккаунтом.
 
-[greeting]
-text=Hello chat!
-cooldown=15
+[nice_stream]
+text=приятный стрим сегодня
+cooldown=240
 accounts=*
-repeat_after=3h
+repeat_after=5h
 enabled=true
 
-[hello]
-text=Hello everyone!
-cooldown=20
+[good_vibes]
+text=тут сегодня хорошая атмосфера
+cooldown=270
 accounts=*
-repeat_after=3h
+repeat_after=5h
 enabled=true
 
-[thanks]
-text=Thanks for watching!
-cooldown=25
+[watching_along]
+text=смотрю, очень уютно идет
+cooldown=300
 accounts=*
-repeat_after=3h
+repeat_after=5h
 enabled=true
 
-# Example account-specific preset:
-# [bot1_special]
-# text=Hello from bot1!
-# cooldown=20
-# accounts=bot1
-# repeat_after=3h
-# enabled=true
+[great_music]
+text=музыка хорошо подходит к стриму
+cooldown=240
+accounts=*
+repeat_after=5h
+enabled=true
+
+[interesting]
+text=интересно наблюдать за этим
+cooldown=285
+accounts=*
+repeat_after=5h
+enabled=true
+
+[cozy_chat]
+text=в чате сегодня уютно
+cooldown=315
+accounts=*
+repeat_after=5h
+enabled=true
+
+[smooth_stream]
+text=приятный спокойный темп у стрима
+cooldown=255
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_evening]
+text=хороший вечер под стрим
+cooldown=300
+accounts=*
+repeat_after=5h
+enabled=true
+
+[nice_choice]
+text=хороший выбор на сегодня
+cooldown=270
+accounts=*
+repeat_after=5h
+enabled=true
+
+[chat_mood]
+text=настроение у чата отличное
+cooldown=330
+accounts=*
+repeat_after=5h
+enabled=true
+
+[easy_watching]
+text=такой стрим приятно включить фоном
+cooldown=285
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_pace]
+text=все идет как-то легко и непринужденно
+cooldown=315
+accounts=*
+repeat_after=5h
+enabled=true
+
+[great_session]
+text=приятно провожу время на стриме
+cooldown=255
+accounts=*
+repeat_after=5h
+enabled=true
+
+[nice_moment]
+text=вот такие моменты и делают стрим живым
+cooldown=300
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_background]
+text=отличный стрим для этого вечера
+cooldown=345
+accounts=*
+repeat_after=5h
+enabled=true
+
+[relaxed]
+text=спокойный стрим, самое то
+cooldown=270
+accounts=*
+repeat_after=5h
+enabled=true
+
+[fun_chat]
+text=с вами в чате не скучно
+cooldown=315
+accounts=*
+repeat_after=5h
+enabled=true
+
+[nice_energy]
+text=классная энергия сегодня
+cooldown=285
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_company]
+text=приятная компания собралась
+cooldown=330
+accounts=*
+repeat_after=5h
+enabled=true
+
+[well_spent]
+text=хорошо время идет под этот стрим
+cooldown=300
+accounts=*
+repeat_after=5h
+enabled=true
+
+[staying_awhile]
+text=кажется, задержусь тут еще немного
+cooldown=345
+accounts=*
+repeat_after=5h
+enabled=true
+
+[comfortable]
+text=очень комфортный стрим
+cooldown=255
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_flow]
+text=приятно смотрится, хороший поток
+cooldown=315
+accounts=*
+repeat_after=5h
+enabled=true
+
+[nice_to_watch]
+text=за этим реально приятно наблюдать
+cooldown=285
+accounts=*
+repeat_after=5h
+enabled=true
+
+[chat_is_alive]
+text=чат сегодня тоже на высоте
+cooldown=330
+accounts=*
+repeat_after=5h
+enabled=true
+
+[calm_evening]
+text=то что нужно для спокойного вечера
+cooldown=300
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_company_2]
+text=здесь всегда как-то по-доброму
+cooldown=345
+accounts=*
+repeat_after=5h
+enabled=true
+
+[nice_to_drop_in]
+text=рад заглянуть на стрим
+cooldown=270
+accounts=*
+repeat_after=5h
+enabled=true
+
+[pleasant_chat]
+text=приятно почитать чат и посмотреть стрим
+cooldown=315
+accounts=*
+repeat_after=5h
+enabled=true
+
+[solid_stream]
+text=крепкий стрим, смотрится легко
+cooldown=300
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_mood]
+text=стрим поднял настроение
+cooldown=330
+accounts=*
+repeat_after=5h
+enabled=true
+
+[sticking_around]
+text=пока не хочется переключаться
+cooldown=285
+accounts=*
+repeat_after=5h
+enabled=true
+
+[nice_pace]
+text=мне нравится такой темп
+cooldown=315
+accounts=*
+repeat_after=5h
+enabled=true
+
+[warm_vibe]
+text=очень теплая атмосфера на стриме
+cooldown=345
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_stream_day]
+text=хороший стрим получился
+cooldown=300
+accounts=*
+repeat_after=5h
+enabled=true
+
+[easygoing]
+text=все так легко идет, приятно смотреть
+cooldown=270
+accounts=*
+repeat_after=5h
+enabled=true
+
+[glad_to_watch]
+text=рад, что зашел посмотреть
+cooldown=330
+accounts=*
+repeat_after=5h
+enabled=true
+
+[nice_corner]
+text=у стрима свой приятный вайб
+cooldown=300
+accounts=*
+repeat_after=5h
+enabled=true
+
+[good_company_3]
+text=хорошая компания для вечернего стрима
+cooldown=345
+accounts=*
+repeat_after=5h
+enabled=true
+
+[staying_for_more]
+text=пожалуй, посмотрю еще немного
+cooldown=285
+accounts=*
+repeat_after=5h
+enabled=true
